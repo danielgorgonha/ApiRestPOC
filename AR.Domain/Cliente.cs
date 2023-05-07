@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AR.Domain
 {
+    [Table("Clientes")]
     public class Cliente
     {
         [Key]
@@ -9,8 +11,8 @@ namespace AR.Domain
 
         [Required(ErrorMessage = "O Campo {0} é obrigatório")]
         [MaxLength(50, ErrorMessage = "O Campo {0} deve ter no máximo {1} caracteres")]
-        public int Nome { get; set; }
-        public int CPF { get; set; }
+        public string Nome { get; set; }
+        public string CPF { get; set; }
         public int Idade { get; set; }
     }
 }
